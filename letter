@@ -1,83 +1,210 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Merry Christmas, My Love</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
     <style>
         body {
-            background-color: #fdf2f2; 
-            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            color: #4a4a4a;
+            background: linear-gradient(135deg, #ffe6e6 0%, #ffc6c6 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden; 
         }
         .card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 500px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(212, 54, 54, 0.2);
             text-align: center;
-            border: 2px solid #e0e0e0;
+            max-width: 400px;
+            width: 85%;
+            position: relative;
+            z-index: 10;
+            border: 1px solid #ffeded;
         }
+
         h1 {
-            color: #c0392b;
+            color: #d63031;
+            font-family: 'Times New Roman', serif;
             margin-bottom: 10px;
+            font-size: 2em;
         }
-        .letter {
-            font-style: italic;
-            line-height: 1.6;
-            margin: 20px 0;
-            text-align: left;
+
+        .subtitle {
+            color: #636e72;
+            font-size: 0.9em;
+            margin-bottom: 30px;
         }
+
+        
         .bouquet {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .flower-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .flower-item:hover {
+            transform: scale(1.1);
+        }
+
+        .flower-icon {
             font-size: 60px;
-            margin: 20px 0;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
             animation: float 3s ease-in-out infinite;
         }
-        .flower-caption {
-            font-size: 0.9rem;
-            color: #888;
+
+        .flower-meaning {
+            font-size: 12px;
+            color: #d63031;
+            margin-top: 5px;
+            font-weight: bold;
+            opacity: 0.8;
         }
+
+       
+        .flower-item:nth-child(2) .flower-icon {
+            animation-delay: 1.5s;
+        }
+
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
-        .signature {
-            margin-top: 30px;
-            font-weight: bold;
+
+      
+        .letter-content {
+            display: none; 
+            text-align: left;
+            background: #fff8f8;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #d63031;
+            margin-top: 20px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2d3436;
+            animation: fadeIn 1s forwards;
+        }
+
+        .btn {
+            background-color: #d63031;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 5px 15px rgba(214, 48, 49, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+      
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 1em;
+            text-shadow: 0 0 5px #000;
+            opacity: 0.8;
+            z-index: 1;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(105vh); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h1>Merry Christmas! 🎄</h1>
-        
-        <div class="letter">
-            <p>My Dearest,</p>
-            <p>This Christmas, I wanted to give you something that lasts forever, just like my love for you. While these pixels aren't fragrant, they carry all the warmth of my heart.</p>
-            <p>Thank you for being the best gift I could ever ask for.</p>
-        </div>
+        <h1>Merry Christmas!</h1>
+        <div class="subtitle">To the love of my life</div>
 
         <div class="bouquet">
-            🌹 🌺 🌹
-        </div>
-        <div class="flower-caption">
-            A bouquet of Roses for love & Lilies for devotion.
+            <div class="flower-item">
+                <div class="flower-icon">🪷</div>
+                <div class="flower-meaning">Lily (Devotion)</div>
+            </div>
+            <div class="flower-item">
+                <div class="flower-icon">🌹</div>
+                <div class="flower-meaning">Rose (Love)</div>
+            </div>
         </div>
 
-        <div class="signature">
-            Love always,<br>
-            Luzbert
+        <button class="btn" onclick="revealLetter()">Read My Letter 💌</button>
+
+        <div id="message" class="letter-content">
+            <p><strong>My Dearest,</strong></p>
+            <p>
+                This Christmas, I wanted to give you something different. Flowers wither, but this code will last forever.
+            </p>
+            <p>
+                The <strong>Lily</strong> represents my pure devotion to you, and the <strong>Rose</strong> represents my burning love.
+            </p>
+            <p>
+                You are my greatest gift. Merry Christmas! ❤️
+            </p>
+            <p style="text-align: right; margin-top: 15px;">- Always yours </p>
         </div>
     </div>
-<script>
-        window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
+
+    <script>
+        
+        function revealLetter() {
+            var letter = document.getElementById('message');
+            var btn = document.querySelector('.btn');
+            
+            letter.style.display = 'block';
+            btn.style.display = 'none'; 
+        }
+
+       
+        function createSnow() {
+            const snow = document.createElement('div');
+            snow.classList.add('snowflake');
+            snow.innerHTML = '❄'; 
+            
+            
+            snow.style.left = Math.random() * 100 + 'vw';
+            snow.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snow.style.fontSize = Math.random() * 15 + 10 + 'px';
+            
+            document.body.appendChild(snow);
+
+           
+            setTimeout(() => {
+                snow.remove();
+            }, 5000);
+        }
+
+        
+        setInterval(createSnow, 200);
     </script>
-    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
