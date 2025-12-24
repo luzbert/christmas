@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merry Christmas, My Love</title>
+    <style>
+        body {
+            background-color: #fdf2f2; 
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #4a4a4a;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 500px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+        }
+        h1 {
+            color: #c0392b;
+            margin-bottom: 10px;
+        }
+        .letter {
+            font-style: italic;
+            line-height: 1.6;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .bouquet {
+            font-size: 60px;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+        .flower-caption {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .signature {
+            margin-top: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Merry Christmas! 🎄</h1>
+        
+        <div class="letter">
+            <p>My Dearest,</p>
+            <p>This Christmas, I wanted to give you something that lasts forever, just like my love for you. While these pixels aren't fragrant, they carry all the warmth of my heart.</p>
+            <p>Thank you for being the best gift I could ever ask for.</p>
+        </div>
+
+        <div class="bouquet">
+            🌹 🌺 🌹
+        </div>
+        <div class="flower-caption">
+            A bouquet of Roses for love & Lilies for devotion.
+        </div>
+
+        <div class="signature">
+            Love always,<br>
+            Luzbert
+        </div>
+    </div>
+<script>
+        window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
